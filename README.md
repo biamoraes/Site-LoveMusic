@@ -65,5 +65,5 @@ Cada parte foi criada com o foco em **organização, experiência do usuário e 
 
 🌐 Acesse o Projeto Online
 
-Acesse o Love Music clicando aqui
+Acesse o Love Music clicando aqui: https://siteweb-lovemusic.onrender.com
 
