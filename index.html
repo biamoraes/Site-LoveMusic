@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Music - Sua Experiência Musical</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Live Music - A melhor experiência para ouvir suas músicas favoritas">
+    <meta name="theme-color" content="#FFA2BE">
+</head>
+<body>
+    <div id="fullScreenLoader" class="full-screen-loader loader-hidden">
+        <div class="loader-content">
+            <div class="main-spinner"></div>
+            <p>Conectando ao seu servidor de música...</p>
+        </div>
+    </div>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="material-icons">menu</span>
+            </div>
+            <div class="logo">Love Music</div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="nav-item active" id="discover-link">
+                            <span class="material-icons">explore</span>
+                            <span class="nav-text">Descobrir</span>
+                        </a>
+                    </li>
+                    <li id="ip-config-item">
+                        <a href="#" class="nav-item" id="ip-config-link">
+                            <span class="material-icons">settings_input_antenna</span>
+                            <span class="nav-text">Configurar Servidor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item" id="library-link">
+                            <span class="material-icons">favorite</span>
+                            <span class="nav-text">Favoritas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item" id="top-tracks-link">
+                            <span class="material-icons">trending_up</span>
+                            <span class="nav-text">Mais Tocadas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item" id="history-link">
+                            <span class="material-icons">history</span>
+                            <span class="nav-text">Histórico</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div id="ip-config-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" id="close-modal">&times;</span>
+                    <h2>Configurar Servidor</h2>
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 15px;">
+                        Conecte-se ao seu servidor de música
+                    </p>
+                    <input type="text" id="ip-url-input" placeholder="URL do servidor (ex: http://192.168.1.100)">
+                    <button id="connect-ip-button">
+                        <span class="material-icons" style="margin-right: 8px; font-size: 18px;">wifi</span>
+                        Conectar
+                    </button>
+                    <div id="ip-status-message"></div>
+                </div>
+            </div>
+
+            <section class="current-track">
+                <div class="track-info-player">
+                    <div class="track-details">
+                        <h2 id="current-track-title">Bem-vindo ao Live Music</h2>
+                        <div class="player-controls">
+                            <span class="material-icons player-icon" title="Anterior">skip_previous</span>
+                            <span class="material-icons player-icon play-pause" id="play-pause-button" title="Play/Pause">play_arrow</span>
+                            <span class="material-icons player-icon" title="Próxima">skip_next</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <span id="current-time">0:00</span>
+                            <input type="range" id="progress-bar" value="0" min="0" max="100" title="Progresso da música">
+                            <span id="total-time">0:00</span>
+                            <span class="material-icons player-icon volume-icon" title="Volume">volume_up</span>
+                            <input type="range" id="volume-bar" value="100" min="0" max="100" title="Controle de volume">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="music-list-section">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Procure por música ou artista...">
+                    <span class="material-icons">search</span>
+                </div>
+
+                <div class="play-all-button">
+                    <span class="material-icons" style="font-size: 18px;">queue_music</span>
+                    <span id="music-count">0 músicas</span>
+                </div>
+
+                <ul class="music-list" id="music-list">
+                    <li class="nav-message">
+                        <span class="material-icons" style="font-size: 48px; margin-bottom: 15px; opacity: 0.5;">music_note</span>
+                        <br>
+                        Configure seu servidor para começar a ouvir suas músicas favoritas
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <audio id="audio-player" src="" preload="metadata"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
